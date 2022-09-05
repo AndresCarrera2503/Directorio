@@ -11,13 +11,13 @@ public class Directorio{
 
     public Directorio() {
     }
-  public void agregarCliente (long tel, Cliente client){
-    mapaCliente.put(tel, client);
+  public void agregarCliente (long tel, Cliente cliente){
+    mapaCliente.put(tel, cliente);
   }
    public Cliente buscarCliente(long tel){
     return mapaCliente.get(tel);
    } 
-   public Set<Long> buscarTelefono(String Apell) {
+   public Set<Long> buscarTelefono(String apellido) {
      Set<Long> telefonos = new HashSet <>();
      Set<Long> claves =mapaCliente.keySet();
      Iterator it = claves.iterator();
@@ -25,14 +25,14 @@ public class Directorio{
      while (it.hasNext()){
          long tell = (Long) it.next();
          clie = mapaCliente.get(tell);
-         if (clie.getApellido().equals(Apell)){
+         if (clie.getApellido().equals(apellido)){
              telefonos.add(tell);
              }
            }
          return telefonos;
    }
          
-   public ArrayList<Cliente> buscarClientes(String city){
+   public ArrayList<Cliente> buscarClientes(String ciudad){
      ArrayList <Cliente> clientes = new ArrayList<>();
      Set<Long> claves = mapaCliente.keySet();
      Iterator it = claves.iterator();
@@ -40,7 +40,7 @@ public class Directorio{
         while(it.hasNext()){
             long tell = (Long)it.next();
             clie = mapaCliente.get(tell);
-            if (clie.getCiudad().equals(city)) {
+            if (clie.getCiudad().equals(ciudad)) {
                 clientes.add(clie);
             }
           }
@@ -51,8 +51,8 @@ public class Directorio{
      Iterator it = claves.iterator();
      Cliente clie;
      while (it.hasNext()){
-         long tell = (Long)it.next();
-         clie = mapaCliente.get(tell);
+         long tel = (Long)it.next();
+         clie = mapaCliente.get(tel);
          if (clie.getDni() == (dni)){
              it.remove();
          }
