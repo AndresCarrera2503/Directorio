@@ -47,17 +47,20 @@ public class Directorio{
           }
     return clientes;    
    }
-   public void borrarCliente(int dni){
-     Set<Long> claves = mapaCliente.keySet();
-     Iterator it = claves.iterator();
-     Cliente clie;
-     while (it.hasNext()){
-         long tel = (Long)it.next();
-         clie = mapaCliente.get(tel);
-         if (clie.getDni() == (dni)){
-             it.remove();
-         }
-     }
+//   public void borrarCliente(long dni){
+//     Set<Long> claves = mapaCliente.keySet();
+//     Iterator it = claves.iterator();
+//     Cliente clie;
+//     while (it.hasNext()){
+//         long tel = (Long)it.next();
+//         clie = mapaCliente.get(tel);
+//         if (clie.getDni() == (dni)){
+//             it.remove();
+//         }
+//     }
+//   }
+   public boolean borrarCliente (long tel1){
+     return mapaCliente.keySet().removeIf(tel -> tel == tel1);
    }
    
 }

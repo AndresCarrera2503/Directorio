@@ -24,18 +24,15 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
-              <Component id="jLabel1" min="-2" pref="272" max="-2" attributes="0"/>
-              <EmptySpace pref="59" max="32767" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="btnAGREGAR" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
-              <Component id="btnBUSCAR" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
-              <Component id="btnBORRAR" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="btnBUSCARCIUDAD" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnBUSCARTELEFONO" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel1" min="-2" pref="272" max="-2" attributes="0"/>
+                  <Component id="btnBUSCAR" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnAGREGAR" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="38" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -44,13 +41,15 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" pref="63" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="btnAGREGAR" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnBUSCAR" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnBORRAR" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace pref="60" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="btnAGREGAR" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="btnBUSCAR" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="btnBUSCARTELEFONO" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="btnBUSCARCIUDAD" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="16" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -74,19 +73,24 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnBUSCAR">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Buscar Cliente Por Tel"/>
+        <Property name="text" type="java.lang.String" value="Buscar y/o eliminar cliente por telefono"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBUSCARActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btnBORRAR">
+    <Component class="javax.swing.JButton" name="btnBUSCARTELEFONO">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Borrar"/>
+        <Property name="text" type="java.lang.String" value="Buscar telefono"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBORRARActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBUSCARTELEFONOActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnBUSCARCIUDAD">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Buscar clientes por ciudad"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

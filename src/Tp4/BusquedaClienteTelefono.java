@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import javax.swing.JOptionPane;
+import static javax.swing.JOptionPane.OK_CANCEL_OPTION;
 
 public class BusquedaClienteTelefono extends javax.swing.JFrame {
 
@@ -43,6 +44,7 @@ public class BusquedaClienteTelefono extends javax.swing.JFrame {
         txtTELEFONO = new javax.swing.JTextField();
         btnSALIR = new javax.swing.JButton();
         btnBUSCAR = new javax.swing.JButton();
+        btnELIMINAR = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -83,6 +85,13 @@ public class BusquedaClienteTelefono extends javax.swing.JFrame {
             }
         });
 
+        btnELIMINAR.setText("Eliminar");
+        btnELIMINAR.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnELIMINARActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -111,7 +120,9 @@ public class BusquedaClienteTelefono extends javax.swing.JFrame {
                                 .addComponent(txtNOMBRE)
                                 .addComponent(txtDNI))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(201, 201, 201)
+                        .addGap(75, 75, 75)
+                        .addComponent(btnELIMINAR)
+                        .addGap(53, 53, 53)
                         .addComponent(btnSALIR))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
@@ -150,7 +161,9 @@ public class BusquedaClienteTelefono extends javax.swing.JFrame {
                     .addComponent(txtDIRECCION, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
-                .addComponent(btnSALIR)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnSALIR)
+                    .addComponent(btnELIMINAR))
                 .addGap(26, 26, 26))
         );
 
@@ -205,6 +218,25 @@ public class BusquedaClienteTelefono extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtTELEFONOActionPerformed
 
+    private void btnELIMINARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnELIMINARActionPerformed
+//    JOptionPane.showConfirmDialog(null, "¿Realmente desea Eliminar éste cliente?", "Eliminar cliente", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+    int confirmacion = JOptionPane.showConfirmDialog(null, "¿Realmente desea Eliminar éste cliente?", "Eliminar cliente", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+    if (confirmacion == 0){
+    boolean borrado = directorio.borrarCliente(Long.parseLong(txtTELEFONO.getText())); 
+    if (borrado == true){
+       JOptionPane.showMessageDialog(null, "El usuario fue eliminado exitosamente");
+       txtDNI.setText(" ");
+        txtNOMBRE.setText(" ");
+        txtAPELLIDO.setText(" ");
+        txtCIUDAD.setText(" ");
+        txtDIRECCION.setText(" ");
+        txtTELEFONO.setText(" ");
+    }
+      
+    
+    }
+    }//GEN-LAST:event_btnELIMINARActionPerformed
+
    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -248,6 +280,7 @@ public class BusquedaClienteTelefono extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBUSCAR;
+    private javax.swing.JButton btnELIMINAR;
     private javax.swing.JButton btnSALIR;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

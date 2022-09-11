@@ -195,7 +195,12 @@ public class AgregarCliente1 extends javax.swing.JFrame {
        boolean respuesta = directorio.agregarCliente(Long.parseLong(txtTELEFONO.getText()) ,new Cliente (Integer.parseInt(txtDNI.getText()) , txtNOMBRE.getText(), txtAPELLIDO.getText(), txtCIUDAD.getText(), txtDIRECCION.getText() ));
         if (respuesta) JOptionPane.showMessageDialog(null,"Este telefono esta en uso" );
         else JOptionPane.showMessageDialog(null,"Datos resgistrados correctamente" );
-
+         txtDNI.setText(" ");
+        txtNOMBRE.setText(" ");
+        txtAPELLIDO.setText(" ");
+        txtCIUDAD.setText(" ");
+        txtDIRECCION.setText(" ");
+        txtTELEFONO.setText(" ");
     }//GEN-LAST:event_btnGUARDARActionPerformed
 
     private void btnSALIRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSALIRActionPerformed

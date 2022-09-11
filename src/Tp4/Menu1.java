@@ -30,7 +30,8 @@ Directorio directorio;
         jLabel1 = new javax.swing.JLabel();
         btnAGREGAR = new javax.swing.JButton();
         btnBUSCAR = new javax.swing.JButton();
-        btnBORRAR = new javax.swing.JButton();
+        btnBUSCARTELEFONO = new javax.swing.JButton();
+        btnBUSCARCIUDAD = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -44,48 +45,50 @@ Directorio directorio;
             }
         });
 
-        btnBUSCAR.setText("Buscar Cliente Por Tel");
+        btnBUSCAR.setText("Buscar y/o eliminar cliente por telefono");
         btnBUSCAR.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBUSCARActionPerformed(evt);
             }
         });
 
-        btnBORRAR.setText("Borrar");
-        btnBORRAR.addActionListener(new java.awt.event.ActionListener() {
+        btnBUSCARTELEFONO.setText("Buscar telefono");
+        btnBUSCARTELEFONO.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBORRARActionPerformed(evt);
+                btnBUSCARTELEFONOActionPerformed(evt);
             }
         });
+
+        btnBUSCARCIUDAD.setText("Buscar clientes por ciudad");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(69, 69, 69)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(59, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnAGREGAR)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnBUSCAR)
-                .addGap(45, 45, 45)
-                .addComponent(btnBORRAR)
-                .addGap(22, 22, 22))
+                .addGap(49, 49, 49)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnBUSCARCIUDAD)
+                    .addComponent(btnBUSCARTELEFONO)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnBUSCAR)
+                    .addComponent(btnAGREGAR))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAGREGAR)
-                    .addComponent(btnBUSCAR)
-                    .addComponent(btnBORRAR))
-                .addContainerGap(60, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnAGREGAR)
+                .addGap(18, 18, 18)
+                .addComponent(btnBUSCAR)
+                .addGap(18, 18, 18)
+                .addComponent(btnBUSCARTELEFONO)
+                .addGap(18, 18, 18)
+                .addComponent(btnBUSCARCIUDAD)
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
         pack();
@@ -109,9 +112,9 @@ Directorio directorio;
         });
     }//GEN-LAST:event_btnBUSCARActionPerformed
 
-    private void btnBORRARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBORRARActionPerformed
-      
-    }//GEN-LAST:event_btnBORRARActionPerformed
+    private void btnBUSCARTELEFONOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBUSCARTELEFONOActionPerformed
+       
+    }//GEN-LAST:event_btnBUSCARTELEFONOActionPerformed
 
     /**
      * @param args the command line arguments
@@ -150,8 +153,9 @@ Directorio directorio;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAGREGAR;
-    private javax.swing.JButton btnBORRAR;
     private javax.swing.JButton btnBUSCAR;
+    private javax.swing.JButton btnBUSCARCIUDAD;
+    private javax.swing.JButton btnBUSCARTELEFONO;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
