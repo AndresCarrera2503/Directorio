@@ -11,8 +11,9 @@ public class Directorio{
 
     public Directorio() {
     }
-  public void agregarCliente (long tel, Cliente cliente){
-    mapaCliente.put(tel, cliente);
+  public boolean agregarCliente (long tel, Cliente cliente){
+      //devuelve el cliente o null si no lo puede guardar
+      return mapaCliente.put(tel, cliente) != null;
   }
    public Cliente buscarCliente(long tel){
     return mapaCliente.get(tel);

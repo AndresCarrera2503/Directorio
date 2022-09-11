@@ -10,10 +10,13 @@ package Tp4;
  * @author Andres
  */
 public class Menu1 extends javax.swing.JFrame {
-Directorio directorio = new Directorio();
-    public Menu1() {
+Directorio directorio;
+    public Menu1(Directorio directorio) {
+        
         initComponents();
+        this.directorio=directorio;
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -41,7 +44,7 @@ Directorio directorio = new Directorio();
             }
         });
 
-        btnBUSCAR.setText("Buscar");
+        btnBUSCAR.setText("Buscar Cliente Por Tel");
         btnBUSCAR.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBUSCARActionPerformed(evt);
@@ -49,6 +52,11 @@ Directorio directorio = new Directorio();
         });
 
         btnBORRAR.setText("Borrar");
+        btnBORRAR.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBORRARActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -61,9 +69,9 @@ Directorio directorio = new Directorio();
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(btnAGREGAR)
-                .addGap(78, 78, 78)
-                .addComponent(btnBUSCAR)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnBUSCAR)
+                .addGap(45, 45, 45)
                 .addComponent(btnBORRAR)
                 .addGap(22, 22, 22))
         );
@@ -86,7 +94,8 @@ Directorio directorio = new Directorio();
     private void btnAGREGARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAGREGARActionPerformed
          java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AgregarCliente1().setVisible(true);
+                new AgregarCliente1(directorio).setVisible(true);
+                dispose();
             }
         });
     }//GEN-LAST:event_btnAGREGARActionPerformed
@@ -94,10 +103,15 @@ Directorio directorio = new Directorio();
     private void btnBUSCARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBUSCARActionPerformed
       java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new BusquedaCliente1().setVisible(true);
+                new BusquedaClienteTelefono(directorio).setVisible(true);
+                dispose();
             }
         });
     }//GEN-LAST:event_btnBUSCARActionPerformed
+
+    private void btnBORRARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBORRARActionPerformed
+      
+    }//GEN-LAST:event_btnBORRARActionPerformed
 
     /**
      * @param args the command line arguments
@@ -127,11 +141,11 @@ Directorio directorio = new Directorio();
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Menu1().setVisible(true);
-            }
-        });
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new Menu1(directorio).setVisible(true);
+//            }
+//        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

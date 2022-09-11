@@ -5,17 +5,17 @@
  */
 package Tp4;
 
-/**
- *
- * @author Andres
- */
-public class BusquedaCliente1 extends javax.swing.JFrame {
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import javax.swing.JOptionPane;
 
-    /**
-     * Creates new form BusquedaCliente1
-     */
-    public BusquedaCliente1() {
+public class BusquedaClienteTelefono extends javax.swing.JFrame {
+
+    Directorio directorio;
+    public BusquedaClienteTelefono(Directorio directorio) {
         initComponents();
+        this.directorio=directorio;
     }
 
     /**
@@ -62,6 +62,12 @@ public class BusquedaCliente1 extends javax.swing.JFrame {
         jLabel6.setText("DIRECCION:");
 
         jLabel7.setText("TELEFONO:");
+
+        txtTELEFONO.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtTELEFONOActionPerformed(evt);
+            }
+        });
 
         btnSALIR.setText("Salir");
         btnSALIR.addActionListener(new java.awt.event.ActionListener() {
@@ -173,16 +179,33 @@ public class BusquedaCliente1 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSALIRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSALIRActionPerformed
-        // TODO add your handling code here:
+        java.awt.EventQueue.invokeLater(new Runnable() {
+                            public void run() {
+                                    new Menu1(directorio).setVisible(true);
+                                    dispose();
+                                }
+                        });
     }//GEN-LAST:event_btnSALIRActionPerformed
 
     private void btnBUSCARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBUSCARActionPerformed
-
+   
+    Cliente cliente = new Cliente();
+    cliente = directorio.buscarCliente(Long.parseLong(txtTELEFONO.getText()));
+    if(cliente!=null){
+        txtDNI.setText(String.valueOf(cliente.getDni()));
+        txtNOMBRE.setText(cliente.getNombre());
+        txtAPELLIDO.setText(cliente.getApellido());
+        txtCIUDAD.setText(cliente.getCiudad());
+        txtDIRECCION.setText(cliente.getDireccion());
+       }
+    else JOptionPane.showMessageDialog(null,"No existe un cliente con esos datos" );
     }//GEN-LAST:event_btnBUSCARActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    private void txtTELEFONOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTELEFONOActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTELEFONOActionPerformed
+
+   
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -197,22 +220,30 @@ public class BusquedaCliente1 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(BusquedaCliente1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BusquedaClienteTelefono.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(BusquedaCliente1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BusquedaClienteTelefono.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(BusquedaCliente1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BusquedaClienteTelefono.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(BusquedaCliente1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BusquedaClienteTelefono.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new BusquedaCliente1().setVisible(true);
-            }
-        });
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new BusquedaCliente1().setVisible(true);
+//            }
+//        });
+        //</editor-fold>
+
+        /* Create and display the form */
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new BusquedaCliente1().setVisible(true);
+//            }
+//        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
