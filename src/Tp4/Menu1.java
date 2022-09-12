@@ -60,6 +60,11 @@ Directorio directorio;
         });
 
         btnBUSCARCIUDAD.setText("Buscar clientes por ciudad");
+        btnBUSCARCIUDAD.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBUSCARCIUDADActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -113,8 +118,22 @@ Directorio directorio;
     }//GEN-LAST:event_btnBUSCARActionPerformed
 
     private void btnBUSCARTELEFONOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBUSCARTELEFONOActionPerformed
-       
+      java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new BusquedaTelefono(directorio).setVisible(true);
+                dispose();
+            }
+        });
     }//GEN-LAST:event_btnBUSCARTELEFONOActionPerformed
+
+    private void btnBUSCARCIUDADActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBUSCARCIUDADActionPerformed
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new BuscarClientesCiudad(directorio).setVisible(true);
+                dispose();
+            }
+        });
+    }//GEN-LAST:event_btnBUSCARCIUDADActionPerformed
 
     /**
      * @param args the command line arguments
