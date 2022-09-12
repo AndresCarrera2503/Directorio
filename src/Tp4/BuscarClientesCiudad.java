@@ -125,11 +125,7 @@ public class BuscarClientesCiudad extends javax.swing.JFrame {
     
     public static void main(String args[]) {
       
-//        java.awt.EventQueue.invokeLater(new Runnable() {
-//            public void run() {
-//                new BuscarClientesCiudad().setVisible(true);
-//            }
-//        });
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
